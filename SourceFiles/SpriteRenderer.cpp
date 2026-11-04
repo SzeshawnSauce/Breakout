@@ -14,10 +14,10 @@ SpriteRenderer::~SpriteRenderer()
 }
 
 void SpriteRenderer::DrawSprite(Texture &texture, glm::vec2 position,
-    glm::vec2 size = glm::vec2(10.0f, 10.0f), float rotate = 0.0f,
-    glm::vec3 color = glm::vec3(1.0f))
+    glm::vec2 size, float rotate,
+    glm::vec3 color)
     {
-        this->shader.Activate();
+        shader.Activate();
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(position, 0.0f));
         
@@ -32,6 +32,12 @@ void SpriteRenderer::DrawSprite(Texture &texture, glm::vec2 position,
 
 
         texture.bindTexture(GL_TEXTURE_2D, GL_TEXTURE0);
+        texture.TextureParameters(GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_NEAREST, GL_LINEAR);
+        this->quadVAO.Bind();
+        
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+
+        this->quadVAO.Unbind();
     }
 
 

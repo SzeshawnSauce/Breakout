@@ -14,7 +14,6 @@ class Texture{
 
     Texture();
 
-    unsigned char* loadTextureSource(const std::string &name);
     void bindTexture(GLenum targetType, GLenum textureUnit);
     void TextureParameters( GLenum wrapTypeS, GLenum wrapTypeT,  GLenum minFilterType, GLenum magFilterType);
     void loadTexture(const std::string &name, GLuint mipmapLevel, GLenum targetFormat, 

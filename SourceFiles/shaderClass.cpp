@@ -27,7 +27,7 @@ Shader::Shader()
         ID = 0;
     }
 
-Shader::Shader(const char* vertexFile, const char* fragmentFile,  const char* geometryFile = nullptr)
+Shader::Shader(const char* vertexFile, const char* fragmentFile,  const char* geometryFile)
 {
     // Getting strings from text files and store in variables
     std::string vertexCode   = get_file_contents(vertexFile);

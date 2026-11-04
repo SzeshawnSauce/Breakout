@@ -177,6 +177,54 @@ SourceFiles/EBO.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.s
 .PHONY : SourceFiles/EBO.cpp.s
 
+SourceFiles/Game.o: SourceFiles/Game.cpp.o
+.PHONY : SourceFiles/Game.o
+
+# target to build an object file
+SourceFiles/Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o
+.PHONY : SourceFiles/Game.cpp.o
+
+SourceFiles/Game.i: SourceFiles/Game.cpp.i
+.PHONY : SourceFiles/Game.i
+
+# target to preprocess a source file
+SourceFiles/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.i
+.PHONY : SourceFiles/Game.cpp.i
+
+SourceFiles/Game.s: SourceFiles/Game.cpp.s
+.PHONY : SourceFiles/Game.s
+
+# target to generate assembly for a file
+SourceFiles/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.s
+.PHONY : SourceFiles/Game.cpp.s
+
+SourceFiles/SpriteRenderer.o: SourceFiles/SpriteRenderer.cpp.o
+.PHONY : SourceFiles/SpriteRenderer.o
+
+# target to build an object file
+SourceFiles/SpriteRenderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o
+.PHONY : SourceFiles/SpriteRenderer.cpp.o
+
+SourceFiles/SpriteRenderer.i: SourceFiles/SpriteRenderer.cpp.i
+.PHONY : SourceFiles/SpriteRenderer.i
+
+# target to preprocess a source file
+SourceFiles/SpriteRenderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.i
+.PHONY : SourceFiles/SpriteRenderer.cpp.i
+
+SourceFiles/SpriteRenderer.s: SourceFiles/SpriteRenderer.cpp.s
+.PHONY : SourceFiles/SpriteRenderer.s
+
+# target to generate assembly for a file
+SourceFiles/SpriteRenderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.s
+.PHONY : SourceFiles/SpriteRenderer.cpp.s
+
 SourceFiles/Texture.o: SourceFiles/Texture.cpp.o
 .PHONY : SourceFiles/Texture.o
 
@@ -336,6 +384,12 @@ help:
 	@echo "... SourceFiles/EBO.o"
 	@echo "... SourceFiles/EBO.i"
 	@echo "... SourceFiles/EBO.s"
+	@echo "... SourceFiles/Game.o"
+	@echo "... SourceFiles/Game.i"
+	@echo "... SourceFiles/Game.s"
+	@echo "... SourceFiles/SpriteRenderer.o"
+	@echo "... SourceFiles/SpriteRenderer.i"
+	@echo "... SourceFiles/SpriteRenderer.s"
 	@echo "... SourceFiles/Texture.o"
 	@echo "... SourceFiles/Texture.i"
 	@echo "... SourceFiles/Texture.s"

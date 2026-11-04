@@ -13,6 +13,9 @@
 #include "EBO.h"
 #include "stb_image.h"
 #include "Texture.h"
+#include "SpriteRenderer.h"
+#include "Game.h"
+
 
 
 // Call back function for resizing window
@@ -72,7 +75,8 @@ int main()
     glfwGetFramebufferSize(gameWindow, &width, &height);
     glViewport(0, 0, width, height);
 
-
+    Game Breakout(width, height);
+    Breakout.Init();
 
 
     while(!glfwWindowShouldClose(gameWindow))
@@ -81,6 +85,7 @@ int main()
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        Breakout.Render();
 
         glfwSwapBuffers(gameWindow);
         glfwPollEvents();

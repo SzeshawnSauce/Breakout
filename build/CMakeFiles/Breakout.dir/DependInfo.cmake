@@ -11,6 +11,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/glad.c" "CMakeFiles/Breakout.dir/SourceFiles/glad.c.o" "gcc" "CMakeFiles/Breakout.dir/SourceFiles/glad.c.o.d"
   "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/Breakout.cpp" "CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o" "gcc" "CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o.d"
   "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/EBO.cpp" "CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o" "gcc" "CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o.d"
+  "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/Game.cpp" "CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o" "gcc" "CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o.d"
+  "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/SpriteRenderer.cpp" "CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o" "gcc" "CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o.d"
   "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/Texture.cpp" "CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.o" "gcc" "CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.o.d"
   "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/VAO.cpp" "CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o" "gcc" "CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o.d"
   "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/VBO.cpp" "CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.o" "gcc" "CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.o.d"

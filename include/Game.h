@@ -3,6 +3,7 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include "SpriteRenderer.h"
 
 // Current state of the game
 enum GameState
@@ -22,6 +23,8 @@ public:
     GameState       State;
     bool            Keys[1024];
     unsigned int    Width, Height;
+    SpriteRenderer  *Renderer;
+    Shader          shader;
 
     // Constructor/Destructor
     Game(unsigned int width, unsigned int height);
