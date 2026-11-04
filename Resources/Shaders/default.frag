@@ -1,23 +1,11 @@
 #version 330 core
+in vec2 TexCoords;
 out vec4 FragColor;
 
-in vec3 color;
-in vec4 fragPos;
-in vec2 TexCoord;
-uniform vec3 timedRGB;
-uniform sampler2D texture1;
-uniform sampler2D texture2;
-uniform sampler2D texture3;
-uniform bool flip;
+unform sampler2D texture0;
+uniform vec3 spriteColor;
 
 void main()
 {
-   if(!flip)
-   {
-      FragColor = mix(texture(texture1, TexCoord), texture(texture2, TexCoord), 0.4) * vec4(fragPos.xyz + 0.1 + timedRGB + (color * 0.5) + 1.0, 1.0f);
-   }
-   if(flip)
-   {
-      FragColor = mix(texture(texture1, TexCoord), texture(texture3, TexCoord), 0.4) * vec4(fragPos.xyz + 0.1 + timedRGB + (color * 0.5) + 1.0, 1.0f);
-   }
+   color = vec4(spriteColor, 1.0) * texture(texture0, TexCoords);
 }
