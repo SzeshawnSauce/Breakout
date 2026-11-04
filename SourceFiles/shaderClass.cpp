@@ -21,15 +21,17 @@ std::string get_file_contents(const char* filename)
     throw(errno);
 }
 
-Shader::Shader(const char* vertexFile, const char* fragmentFile)
+Shader::Shader(const char* vertexFile, const char* fragmentFile,  const char* geometryFile = nullptr)
 {
     // Getting strings from text files and store in variables
-    std::string vertexCode = get_file_contents(vertexFile);
+    std::string vertexCode   = get_file_contents(vertexFile);
     std::string fragmentCode = get_file_contents(fragmentFile);
+    
 
     // Convert and store as character arrays
     const char* vertexSource = vertexCode.c_str();
     const char* fragmentSource = fragmentCode.c_str();
+    
 
     // Create Vertex Shader Object and get its reference
     // OpenGL version of an unsigned integer (positive integers)
@@ -61,8 +63,31 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile)
     glAttachShader(ID, vertexShader);
     glAttachShader(ID, fragmentShader);
 
+    // If we happen to have a geometry shader
+    if(geometryFile != nullptr)
+    {
+        std::string geometryCode = get_file_contents(geometryFile);
+        const char* geometrySource = geometryCode.c_str();
+        GLuint geometryShader = glCreateShader(GL_GEOMETRY_SHADER);
+
+        // Attach vertex shader source to the Vertex Shader Object
+        glShaderSource(geometryShader, 1, &geometrySource, NULL);
+        // GPU can't understand source code, so we must compile it now into machine code
+        glCompileShader(geometryShader);
+
+        CompileError(geometryShader, "GEOMETRY");
+        glAttachShader(ID, geometryShader);
+        // Wrapping the shader program
+        glLinkProgram(ID);
+        glDeleteShader(geometryShader);
+    }
+    else
+    {
+        // Wrapping the shader program
+        glLinkProgram(ID);
+    }
     // Wrapping the shader program
-    glLinkProgram(ID);
+    
 
     CompileError(ID, "PROGRAM");
         
@@ -74,6 +99,8 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile)
 
 }
 
+
+
 void Shader::Activate()
 {
     glUseProgram(ID);
@@ -84,20 +111,51 @@ void Shader::setBool(const std::string &name, bool value) const
 {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value);
 }
+
 void Shader::setInt(const std::string &name, int value) const
 {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
 }
+
 void Shader::setFloat(const std::string &name, float value) const
 {
     glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
 }
+
+void Shader::set2Float (const std::string &name, float x, float y)
+{
+    glUniform2f(glGetUniformLocation(ID, name.c_str()), x, y);
+}
+
+void Shader::set2Float (const std::string &name, const glm::vec2 &v2)
+{
+    glUniform2f(glGetUniformLocation(ID, name.c_str()), v2.x, v2.y);
+}
+
+
 void Shader::set3Float(const std::string &name, float f1, float f2, float f3) const
 {
     glUniform3f(glGetUniformLocation(ID, name.c_str()), f1, f2, f3);
 }
 
-void Shader::set4fv(const std::string &name, glm::mat4 matrix) const
+void Shader::set3Float(const std::string &name, const glm::vec3 &v3) const
+{
+    glUniform3f(glGetUniformLocation(ID, name.c_str()), v3.x, v3.y, v3.z);
+}
+
+void Shader::set4Float(const std::string &name, float f1, float f2, float f3, float f4) const
+{
+    glUniform4f(glGetUniformLocation(ID, name.c_str()), f1, f2, f3, f4);
+}
+
+void Shader::set4Float(const std::string &name, const glm::vec4 &v4) const
+{
+    glUniform4f(glGetUniformLocation(ID, name.c_str()), v4.x, v4.y, v4.z, v4.w);
+}
+
+
+
+void Shader::setMat4(const std::string &name, glm::mat4 matrix) const
 {
     glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(matrix));
 }
