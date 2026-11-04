@@ -21,6 +21,12 @@ std::string get_file_contents(const char* filename)
     throw(errno);
 }
 
+// Default Constructor
+Shader::Shader()
+    {
+        ID = 0;
+    }
+
 Shader::Shader(const char* vertexFile, const char* fragmentFile,  const char* geometryFile = nullptr)
 {
     // Getting strings from text files and store in variables

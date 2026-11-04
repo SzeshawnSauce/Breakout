@@ -18,6 +18,9 @@ class Shader
     public:
     // Reference to object
     GLuint ID;
+
+    // Default Constructor
+    Shader();
     // Constructor that takes in the vertex and fragment source code
     Shader(const char* vertexFile, const char* fragmentFile, const char* geometryFile);
 
