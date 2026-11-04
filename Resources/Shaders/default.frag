@@ -2,10 +2,10 @@
 in vec2 TexCoords;
 out vec4 FragColor;
 
-unform sampler2D texture0;
+unform sampler2D image;
 uniform vec3 spriteColor;
 
 void main()
 {
-   color = vec4(spriteColor, 1.0) * texture(texture0, TexCoords);
+   color = vec4(spriteColor, 1.0) * texture(image, TexCoords);
 }
