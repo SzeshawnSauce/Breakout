@@ -25,16 +25,16 @@ void SpriteRenderer::DrawSprite(Texture &texture, glm::vec2 position,
         model = glm::rotate(model, glm::radians(rotate), glm::vec3(0.0f, 0.0f, 1.0f));
         model = glm::translate(model, glm::vec3(-0.5f * size.x, -0.5f * size.y, 0.0f));
 
-        model = glm::scale(model, glm::vec3(size, 1.0f));
+        model = glm::scale(model, glm::vec3(size, 2.0f));
 
-        this->shader.setInt("image", 1);
+        
         this->shader.setMat4("model", model);
         this->shader.set3Float("spriteColor", color);
 
 
-        
+     
         this->quadVAO.Bind();
-        texture.bindTexture(GL_TEXTURE_2D, GL_TEXTURE1);
+        
         glDrawArrays(GL_TRIANGLES, 0, 6);
 
         this->quadVAO.Unbind();
