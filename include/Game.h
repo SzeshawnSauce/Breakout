@@ -23,7 +23,7 @@ public:
     GameState       State;
     bool            Keys[1024];
     unsigned int    Width, Height;
-    SpriteRenderer  *Renderer;
+    SpriteRenderer* Renderer;
     Shader          shader;
 
     // Constructor/Destructor

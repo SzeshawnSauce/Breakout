@@ -19,6 +19,7 @@ class Texture{
     void loadTexture(const std::string &name, GLuint mipmapLevel, GLenum targetFormat, 
         GLenum sourceFormat, GLenum sourceType);
 
+
 };
 
 

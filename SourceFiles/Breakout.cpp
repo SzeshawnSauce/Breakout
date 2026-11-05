@@ -76,21 +76,41 @@ int main()
     glViewport(0, 0, width, height);
 
     Game Breakout(width, height);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     Breakout.Init();
+    float deltaTime = 0.0f;
+    float lastFrame = 0.0f;
 
-
-    while(!glfwWindowShouldClose(gameWindow))
+     while (!glfwWindowShouldClose(gameWindow))
     {
-        closeWindow(gameWindow);
+        // calculate delta time
+        // --------------------
+        float currentFrame = glfwGetTime();
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+        glfwPollEvents();
+
+        // manage user input
+        // -----------------
+        Breakout.ProcessInput(deltaTime);
+
+        // update game state
+        // -----------------
+        Breakout.Update(deltaTime);
+
+        // render
+        // ------
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-
         Breakout.Render();
 
         glfwSwapBuffers(gameWindow);
-        glfwPollEvents();
     }
-    glfwDestroyWindow(gameWindow);
+
+    // delete all resources as loaded using the resource manager
+    // ---------------------------------------------------------
+
     glfwTerminate();
     return 0;
 }

@@ -32,7 +32,6 @@ void Game::Init()
     shader.setMat4("projection", projection);
 
     Renderer = new SpriteRenderer(shader);
-
     
 }
 
@@ -50,6 +49,8 @@ void Game::Update(float dt)
 void Game::Render()
 {
     Texture lulu;
-    lulu.loadTexture("../Resources/TextureSource/lulu2.png", 0, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE);
+    lulu.bindTexture(GL_TEXTURE_2D, GL_TEXTURE0);
+    lulu.TextureParameters(GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_NEAREST, GL_LINEAR);
+    lulu.loadTexture("/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/TextureSource/awesomeface.png", 0, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE);
     Renderer->DrawSprite(lulu, glm::vec2(200.0f, 200.0f), glm::vec2(300.0f, 400.0f), 45.0f, glm::vec3(0.0f, 1.0f, 0.0f));
 }

@@ -17,7 +17,7 @@ void SpriteRenderer::DrawSprite(Texture &texture, glm::vec2 position,
     glm::vec2 size, float rotate,
     glm::vec3 color)
     {
-        shader.Activate();
+        this->shader.Activate();
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(position, 0.0f));
         
@@ -27,14 +27,14 @@ void SpriteRenderer::DrawSprite(Texture &texture, glm::vec2 position,
 
         model = glm::scale(model, glm::vec3(size, 1.0f));
 
+        this->shader.setInt("image", 1);
         this->shader.setMat4("model", model);
         this->shader.set3Float("spriteColor", color);
 
 
-        texture.bindTexture(GL_TEXTURE_2D, GL_TEXTURE0);
-        texture.TextureParameters(GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_NEAREST, GL_LINEAR);
-        this->quadVAO.Bind();
         
+        this->quadVAO.Bind();
+        texture.bindTexture(GL_TEXTURE_2D, GL_TEXTURE1);
         glDrawArrays(GL_TRIANGLES, 0, 6);
 
         this->quadVAO.Unbind();
@@ -60,9 +60,8 @@ void SpriteRenderer::initRenderData()
 
     VBO VBO1(vertices, sizeof(vertices));
     
-    this->quadVAO.LinkAttrib(VBO1, 0, 4, GL_FLOAT, 4 * sizeof(float), (void*)0);
+    this->quadVAO.LinkAttrib(VBO1, 0, 4, GL_FLOAT, 4 * sizeof(GLfloat), (void*)0);
 
-    VBO1.Unbind();
     this->quadVAO.Unbind();
 
 
