@@ -17,12 +17,13 @@
 #include "Game.h"
 
 
-
+/*
 // Call back function for resizing window
 void framebuffer_size_callback(GLFWwindow *window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }
+*/
 
 // Function to close window when the ESC key is pressed
 void closeWindow(GLFWwindow *window)
@@ -66,13 +67,15 @@ int main()
     // Load GLAD so it configures OpenGL
     gladLoadGL();
 
+
     // registering call back function for resizing window
-    glfwSetFramebufferSizeCallback(gameWindow, framebuffer_size_callback);
+    //glfwSetFramebufferSizeCallback(gameWindow, framebuffer_size_callback);
 
     // Specify the viewport of OpenGL in the Window
     // Get the actual framebuffer dimensions to account for Retina/high-DPI displays
-    int width, height;
-    glfwGetFramebufferSize(gameWindow, &width, &height);
+    int width = 800;
+    int height = 600;
+    //glfwGetFramebufferSize(gameWindow, &width, &height);
     glViewport(0, 0, width, height);
 
     Game Breakout(width, height);
@@ -84,6 +87,7 @@ int main()
 
      while (!glfwWindowShouldClose(gameWindow))
     {
+        closeWindow(gameWindow);
         // calculate delta time
         // --------------------
         float currentFrame = glfwGetTime();

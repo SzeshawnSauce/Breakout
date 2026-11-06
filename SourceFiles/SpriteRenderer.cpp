@@ -25,7 +25,7 @@ void SpriteRenderer::DrawSprite(Texture &texture, glm::vec2 position,
         model = glm::rotate(model, glm::radians(rotate), glm::vec3(0.0f, 0.0f, 1.0f));
         model = glm::translate(model, glm::vec3(-0.5f * size.x, -0.5f * size.y, 0.0f));
 
-        model = glm::scale(model, glm::vec3(size, 2.0f));
+        model = glm::scale(model, glm::vec3(size, 1.0f));
 
         
         this->shader.setMat4("model", model);

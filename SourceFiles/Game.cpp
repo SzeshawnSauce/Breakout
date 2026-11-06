@@ -1,7 +1,8 @@
 #include "Game.h"
 #include "SpriteRenderer.h"
+#include "shaderClass.h"
 #include "Texture.h"
-
+#include "ResourceManager.h"
 
 
 
@@ -21,17 +22,18 @@ Game::~Game()
 void Game::Init()
 {
     //Load Shaders
-    shader = Shader("/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/Shaders/default.vert", "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/Shaders/default.frag", nullptr);
+    ResourceManager::LoadShader("/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/Shaders/default.vert", "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/Shaders/default.frag", nullptr, "ShaderProgram");
+    
 
     //Configure Shaders
 
     glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(this->Width),
                         static_cast<float>(this->Height), 0.0f, -1.0f, 1.0f);
-    shader.Activate();
-    shader.setInt("image", 0);
-    shader.setMat4("projection", projection);
+    ResourceManager::GetShader("ShaderProgram").Activate();
+    ResourceManager::GetShader("ShaderProgram").setInt("image", 0);
+    ResourceManager::GetShader("ShaderProgram").setMat4("projection", projection);
 
-    Renderer = new SpriteRenderer(shader);
+    Renderer = new SpriteRenderer(ResourceManager::GetShader("ShaderProgram"));
     
 }
 

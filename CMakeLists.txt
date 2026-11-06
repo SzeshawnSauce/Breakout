@@ -11,6 +11,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 
 add_executable(Breakout 
     ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/Breakout.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/ResourceManager.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/glad.c
     ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/shaderClass.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/VAO.cpp
@@ -26,7 +27,7 @@ add_executable(Breakout
 target_include_directories(Breakout PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_SOURCE_DIR}/include/glfw-3.5.1/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/glm
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/glm
 )
 
 target_link_libraries(Breakout PRIVATE

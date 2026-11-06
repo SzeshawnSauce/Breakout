@@ -86,10 +86,24 @@ CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/Breakout.cpp" -o CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.s
 
+CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o: CMakeFiles/Breakout.dir/flags.make
+CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o: /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/ResourceManager.cpp
+CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o: CMakeFiles/Breakout.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o -MF CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o.d -o CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o -c "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/ResourceManager.cpp"
+
+CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/ResourceManager.cpp" > CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.i
+
+CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/ResourceManager.cpp" -o CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.s
+
 CMakeFiles/Breakout.dir/SourceFiles/glad.c.o: CMakeFiles/Breakout.dir/flags.make
 CMakeFiles/Breakout.dir/SourceFiles/glad.c.o: /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/glad.c
 CMakeFiles/Breakout.dir/SourceFiles/glad.c.o: CMakeFiles/Breakout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Breakout.dir/SourceFiles/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Breakout.dir/SourceFiles/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Breakout.dir/SourceFiles/glad.c.o -MF CMakeFiles/Breakout.dir/SourceFiles/glad.c.o.d -o CMakeFiles/Breakout.dir/SourceFiles/glad.c.o -c "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/glad.c"
 
 CMakeFiles/Breakout.dir/SourceFiles/glad.c.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/Breakout.dir/SourceFiles/glad.c.s: cmake_force
 CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.o: CMakeFiles/Breakout.dir/flags.make
 CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.o: /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/shaderClass.cpp
 CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.o: CMakeFiles/Breakout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.o -MF CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.o.d -o CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.o -c "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/shaderClass.cpp"
 
 CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.s: cmake_force
 CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o: CMakeFiles/Breakout.dir/flags.make
 CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o: /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/VAO.cpp
 CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o: CMakeFiles/Breakout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o -MF CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o.d -o CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o -c "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/VAO.cpp"
 
 CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.s: cmake_force
 CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.o: CMakeFiles/Breakout.dir/flags.make
 CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.o: /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/VBO.cpp
 CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.o: CMakeFiles/Breakout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.o -MF CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.o.d -o CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.o -c "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/VBO.cpp"
 
 CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/Breakout.dir/SourceFiles/VBO.cpp.s: cmake_force
 CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o: CMakeFiles/Breakout.dir/flags.make
 CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o: /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/EBO.cpp
 CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o: CMakeFiles/Breakout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o -MF CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o.d -o CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o -c "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/EBO.cpp"
 
 CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.s: cmake_force
 CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.o: CMakeFiles/Breakout.dir/flags.make
 CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.o: /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/Texture.cpp
 CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.o: CMakeFiles/Breakout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.o -MF CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.o.d -o CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.o -c "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/Texture.cpp"
 
 CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.s: cmake_force
 CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: CMakeFiles/Breakout.dir/flags.make
 CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/stb_image.cpp
 CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: CMakeFiles/Breakout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o -MF CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o.d -o CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o -c "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/stb_image.cpp"
 
 CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.s: cmake_force
 CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o: CMakeFiles/Breakout.dir/flags.make
 CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o: /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/SpriteRenderer.cpp
 CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o: CMakeFiles/Breakout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o -MF CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o.d -o CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o -c "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/SpriteRenderer.cpp"
 
 CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.s: cmake_force
 CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o: CMakeFiles/Breakout.dir/flags.make
 CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o: /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/Game.cpp
 CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o: CMakeFiles/Breakout.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o -MF CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o.d -o CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o -c "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/SourceFiles/Game.cpp"
 
 CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.i: cmake_force
@@ -215,6 +229,7 @@ CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.s: cmake_force
 # Object files for target Breakout
 Breakout_OBJECTS = \
 "CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o" \
+"CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o" \
 "CMakeFiles/Breakout.dir/SourceFiles/glad.c.o" \
 "CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.o" \
 "CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o" \
@@ -229,6 +244,7 @@ Breakout_OBJECTS = \
 Breakout_EXTERNAL_OBJECTS =
 
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/Breakout: CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o
+/Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/Breakout: CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/Breakout: CMakeFiles/Breakout.dir/SourceFiles/glad.c.o
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/Breakout: CMakeFiles/Breakout.dir/SourceFiles/shaderClass.cpp.o
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/Breakout: CMakeFiles/Breakout.dir/SourceFiles/VAO.cpp.o
@@ -241,7 +257,7 @@ Breakout_EXTERNAL_OBJECTS =
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/Breakout: CMakeFiles/Breakout.dir/build.make
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/Breakout: /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glfw-3.5.1/build/src/libglfw3.a
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/Breakout: CMakeFiles/Breakout.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable \"/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Breakout\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable \"/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Breakout\""
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Breakout.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

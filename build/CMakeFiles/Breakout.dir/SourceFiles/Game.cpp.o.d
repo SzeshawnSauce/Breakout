@@ -982,4 +982,7 @@ CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o: \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/Texture.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/stb_image.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/VAO.h \
-  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/VBO.h
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/VBO.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/ResourceManager.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree

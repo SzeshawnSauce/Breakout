@@ -5,21 +5,6 @@
 
 #include "shaderClass.h"
 
-std::string get_file_contents(const char* filename)
-{
-    std::ifstream in(filename, std::ios::binary);
-    if (in)
-    {
-        std::string contents;
-        in.seekg(0, std::ios::end);
-        contents.resize(in.tellg());
-        in.seekg(0, std::ios::beg);
-        in.read(&contents[0], contents.size());
-        in.close();
-        return(contents);
-    }
-    throw(errno);
-}
 
 // Default Constructor
 Shader::Shader()
@@ -27,17 +12,9 @@ Shader::Shader()
         ID = 0;
     }
 
-Shader::Shader(const char* vertexFile, const char* fragmentFile,  const char* geometryFile)
+Shader::Shader(const char* vertexSource, const char* fragmentSource,  const char* geometrySource)
 {
-    // Getting strings from text files and store in variables
-    std::string vertexCode   = get_file_contents(vertexFile);
-    std::string fragmentCode = get_file_contents(fragmentFile);
-    
 
-    // Convert and store as character arrays
-    const char* vertexSource = vertexCode.c_str();
-    const char* fragmentSource = fragmentCode.c_str();
-    
 
     // Create Vertex Shader Object and get its reference
     // OpenGL version of an unsigned integer (positive integers)
@@ -70,10 +47,9 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile,  const char* ge
     glAttachShader(ID, fragmentShader);
 
     // If we happen to have a geometry shader
-    if(geometryFile != nullptr)
+    if(geometrySource != nullptr)
     {
-        std::string geometryCode = get_file_contents(geometryFile);
-        const char* geometrySource = geometryCode.c_str();
+        
         GLuint geometryShader = glCreateShader(GL_GEOMETRY_SHADER);
 
         // Attach vertex shader source to the Vertex Shader Object

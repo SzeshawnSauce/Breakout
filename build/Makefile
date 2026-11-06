@@ -201,6 +201,30 @@ SourceFiles/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.s
 .PHONY : SourceFiles/Game.cpp.s
 
+SourceFiles/ResourceManager.o: SourceFiles/ResourceManager.cpp.o
+.PHONY : SourceFiles/ResourceManager.o
+
+# target to build an object file
+SourceFiles/ResourceManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o
+.PHONY : SourceFiles/ResourceManager.cpp.o
+
+SourceFiles/ResourceManager.i: SourceFiles/ResourceManager.cpp.i
+.PHONY : SourceFiles/ResourceManager.i
+
+# target to preprocess a source file
+SourceFiles/ResourceManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.i
+.PHONY : SourceFiles/ResourceManager.cpp.i
+
+SourceFiles/ResourceManager.s: SourceFiles/ResourceManager.cpp.s
+.PHONY : SourceFiles/ResourceManager.s
+
+# target to generate assembly for a file
+SourceFiles/ResourceManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.s
+.PHONY : SourceFiles/ResourceManager.cpp.s
+
 SourceFiles/SpriteRenderer.o: SourceFiles/SpriteRenderer.cpp.o
 .PHONY : SourceFiles/SpriteRenderer.o
 
@@ -387,6 +411,9 @@ help:
 	@echo "... SourceFiles/Game.o"
 	@echo "... SourceFiles/Game.i"
 	@echo "... SourceFiles/Game.s"
+	@echo "... SourceFiles/ResourceManager.o"
+	@echo "... SourceFiles/ResourceManager.i"
+	@echo "... SourceFiles/ResourceManager.s"
 	@echo "... SourceFiles/SpriteRenderer.o"
 	@echo "... SourceFiles/SpriteRenderer.i"
 	@echo "... SourceFiles/SpriteRenderer.s"

@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o.d"
   "CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o"
   "CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o.d"
+  "CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o"
+  "CMakeFiles/Breakout.dir/SourceFiles/ResourceManager.cpp.o.d"
   "CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o"
   "CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o.d"
   "CMakeFiles/Breakout.dir/SourceFiles/Texture.cpp.o"

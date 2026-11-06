@@ -11,7 +11,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-std::string get_file_contents(const char* filename);
 
 class Shader
 {
@@ -22,7 +21,7 @@ class Shader
     // Default Constructor
     Shader();
     // Constructor that takes in the vertex and fragment source code
-    Shader(const char* vertexFile, const char* fragmentFile, const char* geometryFile);
+    Shader(const char* vertexSource, const char* fragmentSource,  const char* geometrySource);
 
     
     void Activate();
