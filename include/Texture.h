@@ -16,9 +16,6 @@ class Texture{
 
     void bindTexture(GLenum targetType, GLenum textureUnit);
     void TextureParameters( GLenum wrapTypeS, GLenum wrapTypeT,  GLenum minFilterType, GLenum magFilterType);
-    void loadTexture(const std::string &name, GLuint mipmapLevel, GLenum targetFormat, 
-        GLenum sourceFormat, GLenum sourceType);
-
 
 };
 

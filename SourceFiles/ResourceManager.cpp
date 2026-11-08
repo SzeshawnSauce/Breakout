@@ -52,17 +52,17 @@ Shader& ResourceManager::GetShader(std::string name)
 }
 
 // Loads and generates texture from source file
-Texture ResourceManager::LoadTexture(const char* textureFile, bool alpha, std::string name)
-{
-    Texture lulu;
-    return lulu;
-}
+Texture& ResourceManager::LoadTexture(Texture& tex, const std::string &name, const std::string &file, GLuint mipmapLevel, GLenum targetFormat, 
+    GLenum sourceFormat, GLenum sourceType)
+    {
+        Textures[name] = loadTextureFromFile(tex, file, mipmapLevel, targetFormat, sourceFormat, sourceType);
+        return Textures[name];
+    }
 
 // Retrieves specified texture
-Texture ResourceManager::GetTexture(std::string name)
+Texture& ResourceManager::GetTexture(std::string name)
 {
-    Texture lulu;
-    return lulu;
+    return Textures[name];
 }
 
 // Properly deallocates all loaded resources
@@ -106,8 +106,26 @@ Shader ResourceManager::loadShaderFromFile(const char* vertexShaderFile, const c
 
 }
 
-Texture ResourceManager::loadTextureFromFile(const char* textureFile, bool alpha)
+Texture& ResourceManager::loadTextureFromFile(Texture& tex, const std::string &file, GLuint mipmapLevel, GLenum targetFormat, 
+    GLenum sourceFormat, GLenum sourceType)
 {
-    Texture lulu;
-    return lulu;
+    // Load the texture data
+    int width, height, nrChannels;
+    //stbi_set_flip_vertically_on_load(true); 
+    unsigned char *data = stbi_load(file.c_str(), &width, &height, &nrChannels, 0);
+    if (data)
+    {
+        // Generates the actual texture image on the bound texture object
+        glTexImage2D(tex.textureType,  mipmapLevel, targetFormat, width, height, 0, sourceFormat, sourceType, data);
+        // Automatically generateas the required mipmaps for currently bound texture
+        glGenerateMipmap(tex.textureType);
+    }
+    else
+    {
+        std::cerr << "Failed to load texture: " << file << std::endl;
+    }
+
+    // Free the image memory
+    stbi_image_free(data);
+    return tex;
 }

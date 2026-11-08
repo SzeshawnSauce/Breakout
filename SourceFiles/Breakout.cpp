@@ -73,9 +73,8 @@ int main()
 
     // Specify the viewport of OpenGL in the Window
     // Get the actual framebuffer dimensions to account for Retina/high-DPI displays
-    int width = 800;
-    int height = 600;
-    //glfwGetFramebufferSize(gameWindow, &width, &height);
+    int width, height;
+    glfwGetFramebufferSize(gameWindow, &width, &height);
     glViewport(0, 0, width, height);
 
     Game Breakout(width, height);
@@ -105,7 +104,7 @@ int main()
 
         // render
         // ------
-        glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         Breakout.Render();
 
