@@ -76,8 +76,7 @@ int main()
     int width, height;
     glfwGetFramebufferSize(gameWindow, &width, &height);
     glViewport(0, 0, width, height);
-
-    Game Breakout(width, height);
+    Game Breakout(width/2 , height/2); // (division by 2 for tutorial following purposes)
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     Breakout.Init();
