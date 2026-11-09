@@ -3,7 +3,10 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <vector>
 #include "SpriteRenderer.h"
+#include "GameObject.h"
+#include "GameLevel.h"
 
 // Current state of the game
 enum GameState
@@ -17,26 +20,28 @@ enum GameState
 
 class Game
 {
-public:
+    public:
 
-    // Game State
-    GameState       State;
-    bool            Keys[1024];
-    unsigned int    Width, Height;
-    SpriteRenderer* Renderer;
-    Shader          shader;
+        // Game State
+        GameState               State;
+        bool                    Keys[1024];
+        unsigned int            Width, Height;
+        SpriteRenderer*         Renderer;
+        Shader                  shader;
+        std::vector<GameLevel>  Levels;
+        unsigned int            Level;
 
-    // Constructor/Destructor
-    Game(unsigned int width, unsigned int height);
-    ~Game();
+        // Constructor/Destructor
+        Game(unsigned int width, unsigned int height);
+        ~Game();
 
-    // Initializes the game (loads shaders/textures/levels)
-    void Init();
-    
-    // Game Loop
-    void ProcessInput(float dt);
-    void Update(float dt);
-    void Render();
+        // Initializes the game (loads shaders/textures/levels)
+        void Init();
+        
+        // Game Loop
+        void ProcessInput(float dt);
+        void Update(float dt);
+        void Render();
 };
 
 #endif

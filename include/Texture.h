@@ -13,6 +13,7 @@ class Texture{
     GLenum textureType;
 
     Texture();
+    
 
     void bindTexture(GLenum targetType, GLenum textureUnit);
     void TextureParameters( GLenum wrapTypeS, GLenum wrapTypeT,  GLenum minFilterType, GLenum magFilterType);

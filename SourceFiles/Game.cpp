@@ -21,6 +21,10 @@ Game::~Game()
 
 void Game::Init()
 {
+    // Configure, load, and generate Textures
+    
+    ResourceManager::LoadTexture("lulu", "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/TextureSource/awesomeface.png", 0, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE);
+
     // Load Shaders
     ResourceManager::LoadShader("/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/Shaders/default.vert", "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/Shaders/default.frag", nullptr, "ShaderProgram");
     
@@ -33,12 +37,7 @@ void Game::Init()
     ResourceManager::GetShader("ShaderProgram").setInt("image", 0);
     ResourceManager::GetShader("ShaderProgram").setMat4("projection", projection);
 
-    // Configure, load, and generate Textures
-    Texture lulu;
-    lulu.bindTexture(GL_TEXTURE_2D, GL_TEXTURE0);
-    lulu.TextureParameters(GL_REPEAT, GL_REPEAT, GL_LINEAR, GL_LINEAR);
-    ResourceManager::LoadTexture(lulu, "lulu", "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/TextureSource/awesomeface.png", 0, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE);
-
+    
     Renderer = new SpriteRenderer(ResourceManager::GetShader("ShaderProgram"));
     
 }

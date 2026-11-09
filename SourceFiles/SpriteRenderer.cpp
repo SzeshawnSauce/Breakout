@@ -1,6 +1,10 @@
+#include <glad/glad.h>
+
+
 #include "SpriteRenderer.h"
 #include "VAO.h"
 #include "VBO.h"
+#include "Texture.h"
 
 SpriteRenderer::SpriteRenderer(Shader &shader)
 {
@@ -31,7 +35,8 @@ void SpriteRenderer::DrawSprite(Texture &texture, glm::vec2 position,
         this->shader.setMat4("model", model);
         this->shader.set3Float("spriteColor", color);
 
-
+        glActiveTexture(GL_TEXTURE0);
+        texture.bindTexture(GL_TEXTURE_2D, GL_TEXTURE0);
      
         this->quadVAO.Bind();
         

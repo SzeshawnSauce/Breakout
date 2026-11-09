@@ -826,6 +826,8 @@ CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o: /Users/shawnlee/Desktop/\ Co
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/EBO.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/Game.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/GameLevel.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/GameObject.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/KHR/khrplatform.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/ResourceManager.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/SpriteRenderer.h \
@@ -1849,6 +1851,8 @@ CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.o: /Users/shawnlee/Desktop/\ Comp_G
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/Game.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/GameLevel.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/GameObject.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/KHR/khrplatform.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/ResourceManager.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/SpriteRenderer.h \
@@ -2837,10 +2841,15 @@ CMakeFiles/Breakout.dir/SourceFiles/GameLevel.cpp.o: /Users/shawnlee/Desktop/\ C
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/GameLevel.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/GameObject.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/KHR/khrplatform.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/ResourceManager.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/SpriteRenderer.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/Texture.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/VAO.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/VBO.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glad/glad.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glfw-3.5.1/include/GLFW/glfw3.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glm/common.hpp \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glm/fwd.hpp \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glm/simd/common.h \
@@ -8921,8 +8930,6 @@ CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: /Users/shawnlee/Desktop/\ C
 
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/ResourceManager.cpp:
 
-/Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/GameObject.h:
-
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/GameLevel.cpp:
 
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/stb_image.h:
@@ -9064,6 +9071,8 @@ CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: /Users/shawnlee/Desktop/\ C
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/ResourceManager.h:
 
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/KHR/khrplatform.h:
+
+/Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/GameObject.h:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h:
 

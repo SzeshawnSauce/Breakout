@@ -1,6 +1,5 @@
 CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o: \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/SpriteRenderer.cpp \
-  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/SpriteRenderer.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glad/glad.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/KHR/khrplatform.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
@@ -33,6 +32,7 @@ CMakeFiles/Breakout.dir/SourceFiles/SpriteRenderer.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/SpriteRenderer.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glm/glm.hpp \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glm/detail/_fixes.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \

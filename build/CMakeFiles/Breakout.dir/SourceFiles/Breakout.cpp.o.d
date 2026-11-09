@@ -986,4 +986,6 @@ CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o: \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/VBO.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/EBO.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/SpriteRenderer.h \
-  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/Game.h
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/Game.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/GameObject.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/GameLevel.h
