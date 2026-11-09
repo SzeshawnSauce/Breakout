@@ -51,13 +51,26 @@ void GameLevel::Load(const char* file, unsigned int levelWidth, unsigned int lev
 // Render Level
 void GameLevel::Draw(SpriteRenderer &renderer)
 {
-    
+    for(GameObject &tile : this->Bricks)
+    {
+        if(!tile.IsDestroyed)
+        {
+            tile.Draw(renderer);
+        }
+    }
 }
 
 // Check if level is completed (all non-solid tiles are destroyed)
 bool GameLevel::IsCompleted()
 {
-    return false;
+    for(GameObject &tile : this->Bricks)
+    {
+        if(!tile.IsSolid && !tile.IsDestroyed)
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 
