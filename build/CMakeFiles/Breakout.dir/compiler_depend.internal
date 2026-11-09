@@ -442,6 +442,7 @@ CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/support.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/support/pthread.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/find_index.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/ignore.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/make_tuple_types.h
@@ -640,6 +641,7 @@ CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/limits
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/locale
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/memory
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex
@@ -826,6 +828,7 @@ CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o
  /Users/shawnlee/Desktop/ Comp_Graphics/Breakout/include/EBO.h
  /Users/shawnlee/Desktop/ Comp_Graphics/Breakout/include/Game.h
  /Users/shawnlee/Desktop/ Comp_Graphics/Breakout/include/KHR/khrplatform.h
+ /Users/shawnlee/Desktop/ Comp_Graphics/Breakout/include/ResourceManager.h
  /Users/shawnlee/Desktop/ Comp_Graphics/Breakout/include/SpriteRenderer.h
  /Users/shawnlee/Desktop/ Comp_Graphics/Breakout/include/Texture.h
  /Users/shawnlee/Desktop/ Comp_Graphics/Breakout/include/VAO.h

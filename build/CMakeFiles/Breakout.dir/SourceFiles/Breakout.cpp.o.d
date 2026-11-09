@@ -955,6 +955,11 @@ CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o: \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glm/gtc/../mat4x2.hpp \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glm/gtc/../mat4x3.hpp \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glm/gtc/type_ptr.inl \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/ResourceManager.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/Texture.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/stb_image.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/shaderClass.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path.h \
@@ -980,7 +985,5 @@ CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o: \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/VAO.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/VBO.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/EBO.h \
-  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/stb_image.h \
-  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/Texture.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/SpriteRenderer.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/Game.h

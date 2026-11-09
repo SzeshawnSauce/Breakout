@@ -7,6 +7,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "ResourceManager.h"
 #include "shaderClass.h"
 #include "VAO.h"
 #include "VBO.h"
@@ -17,13 +18,13 @@
 #include "Game.h"
 
 
-/*
+
 // Call back function for resizing window
 void framebuffer_size_callback(GLFWwindow *window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }
-*/
+
 
 // Function to close window when the ESC key is pressed
 void closeWindow(GLFWwindow *window)
@@ -69,7 +70,7 @@ int main()
 
 
     // registering call back function for resizing window
-    //glfwSetFramebufferSizeCallback(gameWindow, framebuffer_size_callback);
+    glfwSetFramebufferSizeCallback(gameWindow, framebuffer_size_callback);
 
     // Specify the viewport of OpenGL in the Window
     // Get the actual framebuffer dimensions to account for Retina/high-DPI displays
@@ -111,8 +112,8 @@ int main()
     }
 
     // delete all resources as loaded using the resource manager
-    // ---------------------------------------------------------
-
+    ResourceManager::Clear();
+    glfwDestroyWindow(gameWindow);
     glfwTerminate();
     return 0;
 }

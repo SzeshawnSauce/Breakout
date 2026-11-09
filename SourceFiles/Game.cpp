@@ -33,7 +33,7 @@ void Game::Init()
     ResourceManager::GetShader("ShaderProgram").setInt("image", 0);
     ResourceManager::GetShader("ShaderProgram").setMat4("projection", projection);
 
-    // Load and configure Textures
+    // Configure, load, and generate Textures
     Texture lulu;
     lulu.bindTexture(GL_TEXTURE_2D, GL_TEXTURE0);
     lulu.TextureParameters(GL_REPEAT, GL_REPEAT, GL_LINEAR, GL_LINEAR);

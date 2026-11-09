@@ -441,6 +441,7 @@ CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o: /Users/shawnlee/Desktop/\ Co
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/support.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/support/pthread.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/find_index.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/ignore.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/make_tuple_types.h \
@@ -639,6 +640,7 @@ CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o: /Users/shawnlee/Desktop/\ Co
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/limits \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/locale \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/memory \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex \
@@ -825,6 +827,7 @@ CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o: /Users/shawnlee/Desktop/\ Co
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/EBO.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/Game.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/KHR/khrplatform.h \
+  /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/ResourceManager.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/SpriteRenderer.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/Texture.h \
   /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/VAO.h \
@@ -6949,12 +6952,6 @@ CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: /Users/shawnlee/Desktop/\ C
 
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/SourceFiles/ResourceManager.cpp:
 
-/Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/ResourceManager.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree:
-
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/stb_image.h:
 
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/shaderClass.h:
@@ -7091,6 +7088,8 @@ CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: /Users/shawnlee/Desktop/\ C
 
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/SpriteRenderer.h:
 
+/Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/ResourceManager.h:
+
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/KHR/khrplatform.h:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h:
@@ -7120,6 +7119,12 @@ CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: /Users/shawnlee/Desktop/\ C
 /Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glm/mat2x2.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_wchar.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_string.h:
+
+/Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glm/matrix.hpp:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_stdlib.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/add_cv_quals.h:
 
@@ -7735,6 +7740,8 @@ CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: /Users/shawnlee/Desktop/\ C
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/find_index.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_useconds_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:
@@ -8064,6 +8071,8 @@ CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: /Users/shawnlee/Desktop/\ C
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread/sched.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/default_sentinel.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/data.h:
 
@@ -8447,8 +8456,6 @@ CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: /Users/shawnlee/Desktop/\ C
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/hash.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_string.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__compare/synth_three_way.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/binary_negate.h:
@@ -8490,10 +8497,6 @@ CMakeFiles/Breakout.dir/SourceFiles/stb_image.cpp.o: /Users/shawnlee/Desktop/\ C
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/remove_copy_if.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/find.h:
-
-/Users/shawnlee/Desktop/\ Comp_Graphics/Breakout/include/glm/matrix.hpp:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_stdlib.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_iterator_concept.h:
 
