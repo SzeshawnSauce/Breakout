@@ -15,7 +15,7 @@ class GameObject
         glm::vec3 Color;
         float Rotation;
         bool IsSolid;
-        bool IsDestoryed;
+        bool IsDestroyed;
 
         Texture Sprite;
 

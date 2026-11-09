@@ -201,6 +201,54 @@ SourceFiles/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/Game.cpp.s
 .PHONY : SourceFiles/Game.cpp.s
 
+SourceFiles/GameLevel.o: SourceFiles/GameLevel.cpp.o
+.PHONY : SourceFiles/GameLevel.o
+
+# target to build an object file
+SourceFiles/GameLevel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/GameLevel.cpp.o
+.PHONY : SourceFiles/GameLevel.cpp.o
+
+SourceFiles/GameLevel.i: SourceFiles/GameLevel.cpp.i
+.PHONY : SourceFiles/GameLevel.i
+
+# target to preprocess a source file
+SourceFiles/GameLevel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/GameLevel.cpp.i
+.PHONY : SourceFiles/GameLevel.cpp.i
+
+SourceFiles/GameLevel.s: SourceFiles/GameLevel.cpp.s
+.PHONY : SourceFiles/GameLevel.s
+
+# target to generate assembly for a file
+SourceFiles/GameLevel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/GameLevel.cpp.s
+.PHONY : SourceFiles/GameLevel.cpp.s
+
+SourceFiles/GameObject.o: SourceFiles/GameObject.cpp.o
+.PHONY : SourceFiles/GameObject.o
+
+# target to build an object file
+SourceFiles/GameObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/GameObject.cpp.o
+.PHONY : SourceFiles/GameObject.cpp.o
+
+SourceFiles/GameObject.i: SourceFiles/GameObject.cpp.i
+.PHONY : SourceFiles/GameObject.i
+
+# target to preprocess a source file
+SourceFiles/GameObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/GameObject.cpp.i
+.PHONY : SourceFiles/GameObject.cpp.i
+
+SourceFiles/GameObject.s: SourceFiles/GameObject.cpp.s
+.PHONY : SourceFiles/GameObject.s
+
+# target to generate assembly for a file
+SourceFiles/GameObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/GameObject.cpp.s
+.PHONY : SourceFiles/GameObject.cpp.s
+
 SourceFiles/ResourceManager.o: SourceFiles/ResourceManager.cpp.o
 .PHONY : SourceFiles/ResourceManager.o
 
@@ -411,6 +459,12 @@ help:
 	@echo "... SourceFiles/Game.o"
 	@echo "... SourceFiles/Game.i"
 	@echo "... SourceFiles/Game.s"
+	@echo "... SourceFiles/GameLevel.o"
+	@echo "... SourceFiles/GameLevel.i"
+	@echo "... SourceFiles/GameLevel.s"
+	@echo "... SourceFiles/GameObject.o"
+	@echo "... SourceFiles/GameObject.i"
+	@echo "... SourceFiles/GameObject.s"
 	@echo "... SourceFiles/ResourceManager.o"
 	@echo "... SourceFiles/ResourceManager.i"
 	@echo "... SourceFiles/ResourceManager.s"

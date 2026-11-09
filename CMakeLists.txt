@@ -21,6 +21,9 @@ add_executable(Breakout
     ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/stb_image.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/SpriteRenderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/Game.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/GameLevel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/GameObject.cpp
+    
     
 )
 
