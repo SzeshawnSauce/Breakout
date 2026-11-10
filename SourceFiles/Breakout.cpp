@@ -40,7 +40,6 @@ int main()
     glfwInitHint(GLFW_COCOA_CHDIR_RESOURCES, GLFW_FALSE);
     glfwInit();
 
-    
     // Tell GLFW which version of OpenGL we are using (3.3)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -73,14 +72,16 @@ int main()
     // registering call back function for resizing window
     glfwSetFramebufferSizeCallback(gameWindow, framebuffer_size_callback);
 
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
     // Specify the viewport of OpenGL in the Window
     // Get the actual framebuffer dimensions to account for Retina/high-DPI displays
     int width, height;
     glfwGetFramebufferSize(gameWindow, &width, &height);
     glViewport(0, 0, width, height);
-    Game Breakout(width/2 , height/2); // (division by 2 for tutorial following purposes)
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    Game Breakout(width / 2 , height / 2); // (division by 2 for tutorial following purposes)
+   
 
     Breakout.Init();
     float deltaTime = 0.0f;

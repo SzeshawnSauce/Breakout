@@ -15,7 +15,6 @@ void GameLevel::Load(const char* file, unsigned int levelWidth, unsigned int lev
 
     // Load from file
     unsigned int tileCode;
-    GameLevel level;
     std::string line;
     std::ifstream fstream(file);
     std::vector<std::vector<unsigned int>> tileData;
@@ -81,8 +80,7 @@ void GameLevel::init(std::vector<std::vector<unsigned int>> tileData,
                     unsigned int height = tileData.size();
                     unsigned int width = tileData[0].size();
                     float unit_width = levelWidth / static_cast<float>(width);
-                    float unit_height = levelHeight / static_cast<float>(height);
-                    
+                    float unit_height = levelHeight/ static_cast<float>(height);
                     // Initialize level tile based on tileData
                     for(unsigned int y = 0; y < height; ++y)
                     {
