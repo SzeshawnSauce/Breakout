@@ -21,13 +21,25 @@ Game::~Game()
 
 void Game::Init()
 {
-    // Configure, load, and generate Textures
     
-    ResourceManager::LoadTexture("lulu", "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/TextureSource/awesomeface.png", 0, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE);
+    // Load Textures
+    ResourceManager::LoadTexture("background", "Resources/TextureSource/background.jpg", 0, GL_RGB, GL_RGB, GL_UNSIGNED_BYTE);
+    ResourceManager::LoadTexture("face", "Resources/TextureSource/awesomeface.png", 0, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE);
+    ResourceManager::LoadTexture("block", "Resources/TextureSource/block.png", 0, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE);
+    ResourceManager::LoadTexture("block_solid", "Resources/TextureSource/block_solid.png", 0, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE);
+
+    // Load Levels
+    GameLevel one;
+    one.Load("Levels/level1.lvl", this->Width, this->Height / 2);
+    GameLevel two;
+    two.Load("Levels/level2.lvl", this->Width, this->Height / 2);
+    GameLevel three;
+    three.Load("Levels/level3.lvl", this->Width, this->Height / 2);
+    GameLevel four;
+    four.Load("Levels/level4.lvl", this->Width, this->Height / 2);
 
     // Load Shaders
-    ResourceManager::LoadShader("/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/Shaders/default.vert", "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Resources/Shaders/default.frag", nullptr, "ShaderProgram");
-    
+    ResourceManager::LoadShader("Resources/Shaders/default.vert", "Resources/Shaders/default.frag", nullptr, "ShaderProgram");
 
     // Configure Shaders
 
@@ -55,5 +67,5 @@ void Game::Update(float dt)
 
 void Game::Render()
 {
-    Renderer->DrawSprite(ResourceManager::GetTexture("lulu"), glm::vec2(200.0f, 200.0f), glm::vec2(300.0f, 400.0f), 45.0f, glm::vec3(0.0f, 1.0f, 1.0f));
+    Renderer->DrawSprite(ResourceManager::GetTexture("face"), glm::vec2(200.0f, 200.0f), glm::vec2(300.0f, 400.0f), 45.0f, glm::vec3(0.0f, 1.0f, 1.0f));
 }

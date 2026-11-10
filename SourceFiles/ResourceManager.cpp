@@ -89,10 +89,11 @@ Shader ResourceManager::loadShaderFromFile(const char* vertexShaderFile, const c
     // Convert and store as character arrays
     vertexSource   = vertexCode.c_str();
     fragmentSource = fragmentCode.c_str();
-
+    
+    std::string geometryCode;
     if(geometryShaderFile != nullptr)
     {
-        std::string geometryCode = get_file_contents(geometryShaderFile);
+        geometryCode = get_file_contents(geometryShaderFile);
         geometrySource = geometryCode.c_str();
     }
     else

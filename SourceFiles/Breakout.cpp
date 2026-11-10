@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -39,6 +37,7 @@ void closeWindow(GLFWwindow *window)
 int main()
 {
     // Initialize GLFW
+    glfwWindowHint(GLFW_COCOA_CHDIR_RESOURCES, GLFW_FALSE);
     glfwInit();
 
     // Tell GLFW which version of OpenGL we are using (3.3)
@@ -52,6 +51,7 @@ int main()
     // contexts for OpenGL 3.2 and later in its core-profile implementation
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
+    
     // Creates the window object
     GLFWwindow* gameWindow = glfwCreateWindow(800, 600, "BREAKOUT", NULL, NULL);
 
@@ -80,6 +80,7 @@ int main()
     Game Breakout(width/2 , height/2); // (division by 2 for tutorial following purposes)
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
     Breakout.Init();
     float deltaTime = 0.0f;
     float lastFrame = 0.0f;
