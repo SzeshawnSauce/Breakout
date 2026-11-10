@@ -4,7 +4,15 @@
 #include "Texture.h"
 #include "ResourceManager.h"
 
+// Game-related state data
+SpriteRenderer*         Renderer;
+GameObject              *Player;
 
+
+// Initial size of player paddle
+const glm::vec2 PLAYER_SIZE(100.0f, 20.0f);
+// Initial velocity of player paddle
+const float PLAYER_VELOCITY(500.0f);
 
 Game::Game(unsigned int width, unsigned int height)
     : State(GAME_ACTIVE), Keys(), Width(width), Height(height)
@@ -21,11 +29,25 @@ Game::~Game()
 
 void Game::Init()
 {
+     // Load Shaders
+    ResourceManager::LoadShader("Resources/Shaders/default.vert", "Resources/Shaders/default.frag", nullptr, "ShaderProgram");
+
+    // Initialize projection matrix and configure shaders
+    glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(this->Width),
+                        static_cast<float>(this->Height), 0.0f, -1.0f, 1.0f);
+    ResourceManager::GetShader("ShaderProgram").Activate();
+    ResourceManager::GetShader("ShaderProgram").setInt("image", 0);
+    ResourceManager::GetShader("ShaderProgram").setMat4("projection", projection);
+    Renderer = new SpriteRenderer(ResourceManager::GetShader("ShaderProgram"));
+
+
     // Load Textures
     ResourceManager::LoadTexture("background", "Resources/TextureSource/background.jpg", 0, GL_RGB, GL_RGB, GL_UNSIGNED_BYTE);
     ResourceManager::LoadTexture("face", "Resources/TextureSource/awesomeface.png", 0, GL_RGB, GL_RGB, GL_UNSIGNED_BYTE);
     ResourceManager::LoadTexture("block", "Resources/TextureSource/block.png", 0, GL_RGB, GL_RGB, GL_UNSIGNED_BYTE);
     ResourceManager::LoadTexture("block_solid", "Resources/TextureSource/block_solid.png", 0, GL_RGB, GL_RGB, GL_UNSIGNED_BYTE);
+    ResourceManager::LoadTexture("paddle", "Resources/TextureSource/paddle.png", 0, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE);
+
 
     // Load Levels
     GameLevel one;
@@ -42,18 +64,13 @@ void Game::Init()
     this->Levels.push_back(four);
     this->Level = 0;
 
-    // Load Shaders
-    ResourceManager::LoadShader("Resources/Shaders/default.vert", "Resources/Shaders/default.frag", nullptr, "ShaderProgram");
+    // Configure game objects
+    glm::vec2 playerPos = glm::vec2( (this->Width / 2.0f) - (PLAYER_SIZE.x / 2.0f) , (this->Height - PLAYER_SIZE.y) );
+    Player = new GameObject(playerPos, PLAYER_SIZE, ResourceManager::GetTexture("paddle"));
 
-    // Initialize projection matrix and configure shaders
-    glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(this->Width),
-                        static_cast<float>(this->Height), 0.0f, -1.0f, 1.0f);
-    ResourceManager::GetShader("ShaderProgram").Activate();
-    ResourceManager::GetShader("ShaderProgram").setInt("image", 0);
-    ResourceManager::GetShader("ShaderProgram").setMat4("projection", projection);
+   
 
     
-    Renderer = new SpriteRenderer(ResourceManager::GetShader("ShaderProgram"));
     
 }
 
@@ -78,6 +95,8 @@ void Game::Render()
         
         // Draw the level
         this->Levels[this->Level].Draw(*Renderer);
+        // Draw the player paddle
+        Player->Draw(*Renderer);
     }
     
 

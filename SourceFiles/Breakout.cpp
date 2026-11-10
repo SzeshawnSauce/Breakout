@@ -80,7 +80,7 @@ int main()
     int width, height;
     glfwGetFramebufferSize(gameWindow, &width, &height);
     glViewport(0, 0, width, height);
-    Game Breakout(width / 2 , height / 2); // (division by 2 for tutorial following purposes)
+    Game Breakout(width , height);
    
 
     Breakout.Init();

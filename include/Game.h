@@ -8,7 +8,9 @@
 #include "GameObject.h"
 #include "GameLevel.h"
 
-// Current state of the game
+
+
+// Represents current state of the game
 enum GameState
 {
     GAME_ACTIVE,
@@ -18,6 +20,9 @@ enum GameState
 };
 
 
+// Game holds all game-related state and functionality.
+// Combines all game-related data into a single class for
+// easy access to each of the components and manageability.
 class Game
 {
     public:
@@ -26,7 +31,6 @@ class Game
         GameState               State;
         bool                    Keys[1024];
         unsigned int            Width, Height;
-        SpriteRenderer*         Renderer;
         Shader                  shader;
         std::vector<GameLevel>  Levels;
         unsigned int            Level;
