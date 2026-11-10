@@ -47,7 +47,7 @@ Shader::Shader(const char* vertexSource, const char* fragmentSource,  const char
     glAttachShader(ID, fragmentShader);
 
     // If we happen to have a geometry shader
-    if(geometrySource != nullptr)
+    if (geometrySource != nullptr)
     {
         
         GLuint geometryShader = glCreateShader(GL_GEOMETRY_SHADER);
@@ -155,7 +155,7 @@ void Shader::CompileError(unsigned int shader, std::string type)
 {
     GLint  success;
     char infoLog[512];
-    if(type != "PROGRAM")
+    if (type != "PROGRAM")
     {
         glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
         
@@ -168,7 +168,7 @@ void Shader::CompileError(unsigned int shader, std::string type)
     else
     {
         glGetProgramiv(shader, GL_COMPILE_STATUS, &success);
-          if(!success)
+          if (!success)
         {
             glGetProgramInfoLog(shader, 512, NULL, infoLog);
             std::cout << "ERROR::PROGRAM::SHADER_LINKING_FAILED\n" << infoLog << std::endl;

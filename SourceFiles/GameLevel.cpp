@@ -25,7 +25,7 @@ void GameLevel::Load(const char* file, unsigned int levelWidth, unsigned int lev
             std::istringstream sstream(line);
             std::vector<unsigned int> row;
 
-            while(sstream >> tileCode) // Read each word separated by spaces
+            while (sstream >> tileCode) // Read each word separated by spaces
             {    
                 row.push_back(tileCode); // Store each word into a row
             }
@@ -33,7 +33,7 @@ void GameLevel::Load(const char* file, unsigned int levelWidth, unsigned int lev
             tileData.push_back(row); // Store the finished row into the tile data
         }
 
-            if(tileData.size() > 0) // Initialize the game level if we successfully read the data file;
+            if (tileData.size() > 0) // Initialize the game level if we successfully read the data file;
             {
                 this->init(tileData, levelWidth, levelHeight);
             }
@@ -50,9 +50,9 @@ void GameLevel::Load(const char* file, unsigned int levelWidth, unsigned int lev
 // Render Level
 void GameLevel::Draw(SpriteRenderer &renderer)
 {
-    for(GameObject &tile : this->Bricks)
+    for (GameObject &tile : this->Bricks)
     {
-        if(!tile.IsDestroyed)
+        if (!tile.IsDestroyed)
         {
             tile.Draw(renderer);
         }
@@ -62,9 +62,9 @@ void GameLevel::Draw(SpriteRenderer &renderer)
 // Check if level is completed (all non-solid tiles are destroyed)
 bool GameLevel::IsCompleted()
 {
-    for(GameObject &tile : this->Bricks)
+    for (GameObject &tile : this->Bricks)
     {
-        if(!tile.IsSolid && !tile.IsDestroyed)
+        if (!tile.IsSolid && !tile.IsDestroyed)
         {
             return false;
         }
@@ -72,22 +72,23 @@ bool GameLevel::IsCompleted()
     return true;
 }
 
-
+// Initializes game level, takes in tileData and creates GameObjects according to the data, storing them in Bricks
 void GameLevel::init(std::vector<std::vector<unsigned int>> tileData,
                 unsigned int levelWidth, unsigned int levelHeight)
                 {
                     // Calculate game level dimensions
                     unsigned int height = tileData.size();
                     unsigned int width = tileData[0].size();
+                    // Calculate individual game object dimensions based on game level dimensions
                     float unit_width = levelWidth / static_cast<float>(width);
                     float unit_height = levelHeight/ static_cast<float>(height);
                     // Initialize level tile based on tileData
-                    for(unsigned int y = 0; y < height; ++y)
+                    for (unsigned int y = 0; y < height; ++y)
                     {
-                        for(unsigned int x = 0; x < width; ++x)
+                        for (unsigned int x = 0; x < width; ++x)
                         {
                             // Check block type from level data (2D level array)
-                            if(tileData[y][x] == 1) // Solid
+                            if (tileData[y][x] == 1) // Solid
                             {
                                 glm::vec2 pos(unit_width * x, unit_height * y); // Gets position of the block based on what order it comes in and the size of the blocks
                                 glm::vec2 size(unit_width, unit_height); // Size of blocks are determined by number of blocks in each row and column
@@ -95,14 +96,14 @@ void GameLevel::init(std::vector<std::vector<unsigned int>> tileData,
                                 obj.IsSolid = true;
                                 this->Bricks.push_back(obj); // Store into Bricks container
                             }
-                            else if(tileData[y][x] > 1) // Non-solid breakable block
+                            else if (tileData[y][x] > 1) // Non-solid breakable block
                             {
                                 glm::vec3 color = glm::vec3(1.0f); // Originally: White
                                 if (tileData[y][x] == 2)
                                 {
                                     color = glm::vec3(0.2f, 0.6f, 1.0f); 
                                 }
-                                else if(tileData[y][x] == 3)
+                                else if (tileData[y][x] == 3)
                                 {
                                     color = glm::vec3(0.0f, 0.7f, 0.0f);
                                 }

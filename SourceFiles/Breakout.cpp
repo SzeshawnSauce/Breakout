@@ -15,29 +15,25 @@
 #include "SpriteRenderer.h"
 #include "Game.h"
 
-
-
 // Call back function for resizing window
-void framebuffer_size_callback(GLFWwindow *window, int width, int height)
-{
-    glViewport(0, 0, width, height);
-}
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+// Call back function for keys
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
+// Call back function for closing window when ESC key is pressed
+void closeWindow(GLFWwindow *window);
 
+// Width and Height of the screen
+const unsigned int SCREEN_WIDTH = 800;
+const unsigned int SCREEN_HEIGHT = 600;
 
-// Function to close window when the ESC key is pressed
-void closeWindow(GLFWwindow *window)
-{
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-    {
-        glfwSetWindowShouldClose(window, true);
-    }
-}
-
+// Create Game object
+Game Breakout(SCREEN_WIDTH , SCREEN_HEIGHT);
 
 int main()
 {
-    // Initialize GLFW
+    // Disables MacOs from changing working directory to Resources when initializing glfw
     glfwInitHint(GLFW_COCOA_CHDIR_RESOURCES, GLFW_FALSE);
+    // Initialize GLFW
     glfwInit();
 
     // Tell GLFW which version of OpenGL we are using (3.3)
@@ -53,7 +49,7 @@ int main()
 
     
     // Creates the window object
-    GLFWwindow* gameWindow = glfwCreateWindow(800, 600, "BREAKOUT", NULL, NULL);
+    GLFWwindow* gameWindow = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "BREAKOUT", NULL, NULL);
 
     if(gameWindow == NULL)
     {
@@ -71,7 +67,8 @@ int main()
 
     // registering call back function for resizing window
     glfwSetFramebufferSizeCallback(gameWindow, framebuffer_size_callback);
-
+    glfwSetKeyCallback(gameWindow, key_callback);
+    // Enable alpha blending
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
@@ -80,9 +77,10 @@ int main()
     int width, height;
     glfwGetFramebufferSize(gameWindow, &width, &height);
     glViewport(0, 0, width, height);
-    Game Breakout(width , height);
-   
 
+    
+
+    // Initialize game
     Breakout.Init();
     float deltaTime = 0.0f;
     float lastFrame = 0.0f;
@@ -121,4 +119,32 @@ int main()
     return 0;
 }
 
+void framebuffer_size_callback(GLFWwindow *window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+}
 
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
+{
+    if (key >= 0 && key < 1024)
+    {
+        if (action == GLFW_PRESS)
+        {
+            Breakout.Keys[key] = true;
+
+        }
+        else if (action == GLFW_RELEASE)
+        {
+            Breakout.Keys[key] = false;
+        }
+    }
+}
+
+void closeWindow(GLFWwindow *window)
+{
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    {
+        glfwSetWindowShouldClose(window, true);
+    }
+}

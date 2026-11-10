@@ -25,6 +25,7 @@ void SpriteRenderer::DrawSprite(Texture &texture, glm::vec2 position,
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(position, 0.0f));
         
+        // rotating around an arbitrary point (we want to rotate from the center of the object here)
         model = glm::translate(model, glm::vec3(0.5f * size.x, 0.5f * size.y, 0.0f));
         model = glm::rotate(model, glm::radians(rotate), glm::vec3(0.0f, 0.0f, 1.0f));
         model = glm::translate(model, glm::vec3(-0.5f * size.x, -0.5f * size.y, 0.0f));

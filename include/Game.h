@@ -31,7 +31,6 @@ class Game
         GameState               State;
         bool                    Keys[1024];
         unsigned int            Width, Height;
-        Shader                  shader;
         std::vector<GameLevel>  Levels;
         unsigned int            Level;
 
