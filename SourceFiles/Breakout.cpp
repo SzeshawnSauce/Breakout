@@ -37,9 +37,10 @@ void closeWindow(GLFWwindow *window)
 int main()
 {
     // Initialize GLFW
-    glfwWindowHint(GLFW_COCOA_CHDIR_RESOURCES, GLFW_FALSE);
+    glfwInitHint(GLFW_COCOA_CHDIR_RESOURCES, GLFW_FALSE);
     glfwInit();
 
+    
     // Tell GLFW which version of OpenGL we are using (3.3)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
