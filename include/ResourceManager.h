@@ -27,8 +27,7 @@ class ResourceManager
         static Shader& GetShader(std::string name);
 
         // Loads and generates texture from source file
-        static Texture& LoadTexture(const std::string &name, const std::string &file, GLuint mipmapLevel, GLenum targetFormat, 
-                GLenum sourceFormat, GLenum sourceType);
+        static Texture& LoadTexture(const std::string &name, const std::string &file);
 
         // Retrieves specified texture
         static Texture& GetTexture(std::string name);
@@ -44,8 +43,7 @@ class ResourceManager
         // Loads and generates a shader from file (no geometry shader)
         static Shader loadShaderFromFile(const char* vertexShaderFile, const char* fragmentShaderFile, const char* geometryShaderFile);
 
-        static Texture loadTextureFromFile(const std::string &name, const std::string &file, GLuint mipmapLevel, GLenum targetFormat, 
-                GLenum sourceFormat, GLenum sourceType);
+        static Texture loadTextureFromFile(const std::string &name, const std::string &file);
 
 
 

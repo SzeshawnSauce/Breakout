@@ -42,11 +42,11 @@ void Game::Init()
 
 
     // Load Textures
-    ResourceManager::LoadTexture("background", "Resources/TextureSource/background.jpg", 0, GL_RGB, GL_RGB, GL_UNSIGNED_BYTE);
-    ResourceManager::LoadTexture("face", "Resources/TextureSource/awesomeface.png", 0, GL_RGB, GL_RGB, GL_UNSIGNED_BYTE);
-    ResourceManager::LoadTexture("block", "Resources/TextureSource/block.png", 0, GL_RGB, GL_RGB, GL_UNSIGNED_BYTE);
-    ResourceManager::LoadTexture("block_solid", "Resources/TextureSource/block_solid.png", 0, GL_RGB, GL_RGB, GL_UNSIGNED_BYTE);
-    ResourceManager::LoadTexture("paddle", "Resources/TextureSource/paddle.png", 0, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE);
+    ResourceManager::LoadTexture("background", "Resources/TextureSource/background.jpg");
+    ResourceManager::LoadTexture("face", "Resources/TextureSource/awesomeface.png");
+    ResourceManager::LoadTexture("block", "Resources/TextureSource/block.png");
+    ResourceManager::LoadTexture("block_solid", "Resources/TextureSource/block_solid.png");
+    ResourceManager::LoadTexture("paddle", "Resources/TextureSource/paddle.png");
 
 
     // Load Levels

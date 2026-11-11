@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <cerrno>
+#include <stdexcept>
 
 #include <glad/glad.h>
 
@@ -52,10 +53,9 @@ Shader& ResourceManager::GetShader(std::string name)
 }
 
 // Loads and generates texture from source file
-Texture& ResourceManager::LoadTexture(const std::string &name, const std::string &file, GLuint mipmapLevel, GLenum targetFormat, 
-    GLenum sourceFormat, GLenum sourceType)
+Texture& ResourceManager::LoadTexture(const std::string &name, const std::string &file)
     {
-        Textures[name] = loadTextureFromFile(name, file, mipmapLevel, targetFormat, sourceFormat, sourceType);
+        Textures[name] = loadTextureFromFile(name, file);
         return Textures[name];
     }
 
@@ -68,10 +68,10 @@ Texture& ResourceManager::GetTexture(std::string name)
 // Properly deallocates all loaded resources
 void ResourceManager::Clear()
 {
-    for(auto iter : Shaders)
+    for (auto iter : Shaders)
         glDeleteProgram(iter.second.ID); // note to self: we use iter.second because it is a map (pair) object <key, object>
 
-    for(auto iter : Textures)
+    for (auto iter : Textures)
         glDeleteTextures(1, &iter.second.ID);
     
 }
@@ -91,7 +91,7 @@ Shader ResourceManager::loadShaderFromFile(const char* vertexShaderFile, const c
     fragmentSource = fragmentCode.c_str();
     
     std::string geometryCode;
-    if(geometryShaderFile != nullptr)
+    if (geometryShaderFile != nullptr)
     {
         geometryCode = get_file_contents(geometryShaderFile);
         geometrySource = geometryCode.c_str();
@@ -107,22 +107,33 @@ Shader ResourceManager::loadShaderFromFile(const char* vertexShaderFile, const c
 
 }
 
-Texture ResourceManager::loadTextureFromFile(const std::string &name, const std::string &file, GLuint mipmapLevel, GLenum targetFormat, 
-    GLenum sourceFormat, GLenum sourceType)
+Texture ResourceManager::loadTextureFromFile(const std::string &name, const std::string &file)
 {
     Texture tex;
     // Load the texture data
+    GLenum format;
     int width, height, nrChannels;
     //stbi_set_flip_vertically_on_load(true); 
     unsigned char *data = stbi_load(file.c_str(), &width, &height, &nrChannels, 0);
+    switch(nrChannels)
+    {
+        case 1: format = GL_RED; break;
+        case 2: format = GL_RG; break;
+        case 3: format = GL_RGB; break;
+        case 4: format = GL_RGBA; break;
+        default:
+            stbi_image_free(data);
+            throw std::runtime_error("UNSUPPORTED TEXTURE FORMAT");
+    }
+
     if (data)
     {
         tex.bindTexture(GL_TEXTURE_2D, GL_TEXTURE0);
-        tex.TextureParameters(GL_REPEAT, GL_REPEAT, GL_LINEAR, GL_LINEAR);
+        tex.TextureParameters(GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR);
         // Generates the actual texture image on the bound texture object
-        glTexImage2D(tex.textureType,  mipmapLevel, targetFormat, width, height, 0, sourceFormat, sourceType, data);
+        glTexImage2D(GL_TEXTURE_2D,  0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         // Automatically generateas the required mipmaps for currently bound texture
-        glGenerateMipmap(tex.textureType);
+        glGenerateMipmap(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, 0);
 
     }
@@ -133,5 +144,6 @@ Texture ResourceManager::loadTextureFromFile(const std::string &name, const std:
 
     // Free the image memory
     stbi_image_free(data);
+
     return tex;
 }
