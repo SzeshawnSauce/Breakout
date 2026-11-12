@@ -41,7 +41,7 @@ class ResourceManager
         ResourceManager(){}
 
         // Loads and generates a shader from file (no geometry shader)
-        static Shader loadShaderFromFile(const char* vertexShaderFile, const char* fragmentShaderFile, const char* geometryShaderFile);
+        static Shader  loadShaderFromFile(const char* vertexShaderFile, const char* fragmentShaderFile, const char* geometryShaderFile);
 
         static Texture loadTextureFromFile(const std::string &name, const std::string &file);
 

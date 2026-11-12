@@ -129,6 +129,30 @@ Breakout/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/build
 .PHONY : Breakout/fast
 
+SourceFiles/BallObject.o: SourceFiles/BallObject.cpp.o
+.PHONY : SourceFiles/BallObject.o
+
+# target to build an object file
+SourceFiles/BallObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/BallObject.cpp.o
+.PHONY : SourceFiles/BallObject.cpp.o
+
+SourceFiles/BallObject.i: SourceFiles/BallObject.cpp.i
+.PHONY : SourceFiles/BallObject.i
+
+# target to preprocess a source file
+SourceFiles/BallObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/BallObject.cpp.i
+.PHONY : SourceFiles/BallObject.cpp.i
+
+SourceFiles/BallObject.s: SourceFiles/BallObject.cpp.s
+.PHONY : SourceFiles/BallObject.s
+
+# target to generate assembly for a file
+SourceFiles/BallObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Breakout.dir/build.make CMakeFiles/Breakout.dir/SourceFiles/BallObject.cpp.s
+.PHONY : SourceFiles/BallObject.cpp.s
+
 SourceFiles/Breakout.o: SourceFiles/Breakout.cpp.o
 .PHONY : SourceFiles/Breakout.o
 
@@ -450,6 +474,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Breakout"
+	@echo "... SourceFiles/BallObject.o"
+	@echo "... SourceFiles/BallObject.i"
+	@echo "... SourceFiles/BallObject.s"
 	@echo "... SourceFiles/Breakout.o"
 	@echo "... SourceFiles/Breakout.i"
 	@echo "... SourceFiles/Breakout.s"

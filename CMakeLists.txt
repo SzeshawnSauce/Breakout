@@ -23,6 +23,7 @@ add_executable(Breakout
     ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/Game.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/GameLevel.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/GameObject.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/SourceFiles/BallObject.cpp
     
     
 )

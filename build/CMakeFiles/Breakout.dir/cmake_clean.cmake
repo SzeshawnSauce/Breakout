@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Breakout"
   "/Users/shawnlee/Desktop/ Comp_Graphics/Breakout/Breakout.pdb"
+  "CMakeFiles/Breakout.dir/SourceFiles/BallObject.cpp.o"
+  "CMakeFiles/Breakout.dir/SourceFiles/BallObject.cpp.o.d"
   "CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o"
   "CMakeFiles/Breakout.dir/SourceFiles/Breakout.cpp.o.d"
   "CMakeFiles/Breakout.dir/SourceFiles/EBO.cpp.o"
