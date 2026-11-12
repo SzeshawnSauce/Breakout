@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "GameObject.h"
 #include "GameLevel.h"
 #include "SpriteRenderer.h"
 #include "shaderClass.h"
@@ -20,7 +21,7 @@ SpriteRenderer*         Renderer;
 GameObject*             Player;
 BallObject*             Ball;
 
-
+bool CheckCollision(GameObject& one, GameObject& two);
 
 Game::Game(unsigned int width, unsigned int height)
     : State(GAME_ACTIVE), Keys(), Width(width), Height(height)
@@ -128,8 +129,11 @@ void Game::ProcessInput(float dt)
 
 void Game::Update(float dt)
 {
+    // Update ball object
     Ball->Move(dt, this->Width);
+    this->DoCollisions();
 }
+
 
 void Game::Render()
 {
@@ -147,6 +151,34 @@ void Game::Render()
         // Draw the ball
         Ball->Draw(*Renderer);
     }
-    
-
 }
+
+void Game::DoCollisions()
+{
+    for (GameObject& box : this->Levels[this->Level].Bricks)
+    {
+        if (!box.IsDestroyed)
+        {
+            if (CheckCollision(*Ball, box))
+            {
+                if (!box.IsSolid)
+                {
+                    box.IsDestroyed = true;
+                    
+                }
+            }
+        }
+    }
+}
+
+bool CheckCollision(GameObject& one, GameObject& two) //AABB - AABB Collision
+    {
+    // Check Collision on X-axis
+    bool collisionX = one.Position.x + one.Size.x >= two.Position.x &&
+        two.Position.x + two.Size.x >= one.Position.x;
+    // Check Collosion on Y-axis
+    bool collisionY = one.Position.y + one.Size.y >= two.Position.y &&
+        two.Position.y + two.Size.y >= one.Position.y;
+    
+    return collisionX && collisionY;
+    }

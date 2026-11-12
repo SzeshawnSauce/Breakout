@@ -11,3 +11,15 @@ void GameObject::Draw(SpriteRenderer &renderer)
     {
         renderer.DrawSprite(this->Sprite, this->Position, this->Size, this->Rotation, this->Color);
     }
+
+static bool CheckCollision(GameObject& one, GameObject& two)
+    {
+    // Check Collision on X-axis
+    bool collisionX = one.Position.x + one.Size.x >= two.Position.x &&
+        two.Position.x + two.Size.x >= one.Position.x;
+    // Check Collosion on Y-axis
+    bool collisionY = one.Position.y + one.Size.y >= two.Position.y &&
+        two.Position.y + two.Size.y >= one.Position.y;
+    
+    return collisionX && collisionY;
+    }

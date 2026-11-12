@@ -27,7 +27,7 @@ class Game
 {
     public:
 
-        // Game State
+        // Game State∂
         GameState               State;
         bool                    Keys[1024];
         unsigned int            Width, Height;
@@ -41,10 +41,16 @@ class Game
         // Initializes the game (loads shaders/textures/levels)
         void Init();
         
+        // Check for collisions
+        void DoCollisions();
+        
         // Game Loop
         void ProcessInput(float dt);
         void Update(float dt);
         void Render();
+
+        
+     
 };
 
 #endif

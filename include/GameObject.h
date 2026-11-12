@@ -24,8 +24,6 @@ class GameObject
 
         virtual void Draw(SpriteRenderer &renderer);
 
-    
-
 };
 
 #endif
