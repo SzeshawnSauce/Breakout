@@ -4,6 +4,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <vector>
+#include <tuple>
 #include "SpriteRenderer.h"
 #include "GameObject.h"
 #include "GameLevel.h"
@@ -19,6 +20,16 @@ enum GameState
     GAME_LOSE
 };
 
+// Cardinal directions for collisions
+enum Direction
+{
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT
+};    
+
+
 
 // Game holds all game-related state and functionality.
 // Combines all game-related data into a single class for
@@ -27,6 +38,8 @@ class Game
 {
     public:
 
+        typedef std::tuple<bool, Direction, glm::vec2> Collision;
+        
         // Game State∂
         GameState               State;
         bool                    Keys[1024];
@@ -49,6 +62,7 @@ class Game
         void Update(float dt);
         void Render();
 
+        
         
      
 };

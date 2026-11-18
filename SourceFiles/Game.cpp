@@ -1,3 +1,5 @@
+#include <tuple>
+
 #include "Game.h"
 #include "GameObject.h"
 #include "GameLevel.h"
@@ -16,12 +18,16 @@ const glm::vec2 INITIAL_BALL_VELOCITY(100.0f, -350.0f);
 // Radius of the ball object
 const float BALL_RADIUS = 12.5f;
 
+
+// Aliasing collision results
+using Collision = std::tuple<bool, Direction, glm::vec2>;
+
 // Game-related state data
 SpriteRenderer*         Renderer;
 GameObject*             Player;
 BallObject*             Ball;
 
-bool        CheckCollision(GameObject& one, GameObject& two);
+Collision   CheckCollision(BallObject& one, GameObject& two);
 Direction   VectorDirection(glm::vec2 target);
 
 
@@ -161,37 +167,57 @@ void Game::DoCollisions()
     {
         if (!box.IsDestroyed)
         {
-            if (CheckCollision(*Ball, box))
+            Collision collision = CheckCollision(*Ball, box);
+            if (std::get<0>(collision))
             {
-                if (!box.IsSolid)
+                if (!box.IsSolid) // Destory box if solid
                 {
                     box.IsDestroyed = true;
-                    
                 }
+                Direction dir = std::get<1>(collision);
+                glm::vec2 diff_vector = std::get<2>(collision);
+                if (dir == LEFT || dir == RIGHT) // Horizontal collisions
+                {
+                    Ball->Velocity.x = -(Ball->Velocity.x); // Reverse horizontal velocity 
+                    float penetration = Ball->Radius - std::abs(diff_vector.x);
+                    if (dir == LEFT)
+                    {
+                        Ball->Position.x += penetration; // if the ball comes from the left bounce back left
+                    }
+                    else
+                    {
+                        Ball->Position.x -= penetration; // if the ball comes from the right bounce back right
+                    }
+
+                }
+                else // Vertical collisions
+                {
+                    Ball->Velocity.y = -(Ball->Velocity.y); // Reverse vertical velocity
+                    float penetration = Ball->Radius - std::abs(diff_vector.y);
+                    if(dir == UP)
+                    {
+                        Ball->Position.y -= penetration; // If the ball comes from below bounce back down
+                    }
+                    else
+                    {
+                        Ball->Position.y += penetration; // If the ball comes from above bounce back up
+                    }
+
+                }
+                
             }
         }
     }
 }
 
-bool CheckCollision(GameObject& one, GameObject& two) // AABB - AABB Collision
-    {
-    // Check Collision on X-axis
-    bool collisionX = one.Position.x + one.Size.x >= two.Position.x &&
-        two.Position.x + two.Size.x >= one.Position.x;
-    // Check Collosion on Y-axis
-    bool collisionY = one.Position.y + one.Size.y >= two.Position.y &&
-        two.Position.y + two.Size.y >= one.Position.y;
-    
-    return collisionX && collisionY;
-    }
 
-bool CheckCollision(BallObject& one, GameObject& two) //AABB - Circle Collision
-    {
+Collision CheckCollision(BallObject& one, GameObject& two) //AABB - Circle Collision
+{
     // Get the center of the circle
     glm::vec2 circle_center(one.Position + one.Radius);
     
     // Get the difference between circle and rectangle centers
-    glm::vec2 half_extents = glm::vec2(two.Size.x / 2, two.Size.y / 2);
+    glm::vec2 half_extents = two.Size / 2.0f;
     glm::vec2 rectangle_center = glm::vec2(two.Position + half_extents);
     glm::vec2 differenceVec = circle_center - (rectangle_center);
     
@@ -202,30 +228,38 @@ bool CheckCollision(BallObject& one, GameObject& two) //AABB - Circle Collision
     // Get the distance between the circle's center and the closest point on the rectangle
     // Check if this distance is less than the circle's radius
     differenceVec = closest - circle_center;
-    return glm::length(differenceVec) < one.Radius;
-    }
-
-
-    Direction VectorDirection(glm::vec2 target)
+    if (glm::length(differenceVec) <= one.Radius)
     {
-        glm::vec2 compass[] =
-        {
-            glm::vec2(0.0f, 1.0f), // UP
-            glm::vec2(0.0f, -1.0f), // DOWN
-            glm::vec2(-1.0f, 0.0f), // LEFT
-            glm::vec2(1.0f, 0.0f) // RIGHT
-        };
-
-        float max = 0.0f;
-        unsigned int best_match = -1;
-        for(unsigned int i = 0; i < 4; i++)
-        {
-            float dot_product = glm::dot(glm::normalize(target), compass[i]);
-            if (dot_product > max)
-            {
-                max = dot_product;
-                best_match = i;
-            }
-        }
-        return (Direction)best_match;
+        return std::make_tuple(true, VectorDirection(differenceVec), differenceVec);
     }
+    else
+    {
+        return std::make_tuple(false, UP, glm::vec2(0.0f, 0.0f));
+    }
+    
+}
+
+
+Direction VectorDirection(glm::vec2 target)
+{
+    glm::vec2 compass[] =
+    {
+        glm::vec2(0.0f, 1.0f), // UP
+        glm::vec2(0.0f, -1.0f), // DOWN
+        glm::vec2(-1.0f, 0.0f), // LEFT
+        glm::vec2(1.0f, 0.0f) // RIGHT
+    };
+
+    float max = 0.0f;
+    unsigned int best_match = -1;
+    for(unsigned int i = 0; i < 4; i++)
+    {
+        float dot_product = glm::dot(glm::normalize(target), compass[i]);
+        if (dot_product > max)
+        {
+            max = dot_product;
+            best_match = i;
+        }
+    }
+    return (Direction)best_match;
+}
