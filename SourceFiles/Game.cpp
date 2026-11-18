@@ -21,7 +21,9 @@ SpriteRenderer*         Renderer;
 GameObject*             Player;
 BallObject*             Ball;
 
-bool CheckCollision(GameObject& one, GameObject& two);
+bool        CheckCollision(GameObject& one, GameObject& two);
+Direction   VectorDirection(glm::vec2 target);
+
 
 Game::Game(unsigned int width, unsigned int height)
     : State(GAME_ACTIVE), Keys(), Width(width), Height(height)
@@ -171,7 +173,7 @@ void Game::DoCollisions()
     }
 }
 
-bool CheckCollision(GameObject& one, GameObject& two) //AABB - AABB Collision
+bool CheckCollision(GameObject& one, GameObject& two) // AABB - AABB Collision
     {
     // Check Collision on X-axis
     bool collisionX = one.Position.x + one.Size.x >= two.Position.x &&
@@ -181,4 +183,49 @@ bool CheckCollision(GameObject& one, GameObject& two) //AABB - AABB Collision
         two.Position.y + two.Size.y >= one.Position.y;
     
     return collisionX && collisionY;
+    }
+
+bool CheckCollision(BallObject& one, GameObject& two) //AABB - Circle Collision
+    {
+    // Get the center of the circle
+    glm::vec2 circle_center(one.Position + one.Radius);
+    
+    // Get the difference between circle and rectangle centers
+    glm::vec2 half_extents = glm::vec2(two.Size.x / 2, two.Size.y / 2);
+    glm::vec2 rectangle_center = glm::vec2(two.Position + half_extents);
+    glm::vec2 differenceVec = circle_center - (rectangle_center);
+    
+    // Get the closest point from rectangle to circle
+    glm::vec2 clampedVec = glm::clamp(differenceVec, -half_extents, half_extents);
+    glm::vec2 closest = rectangle_center + clampedVec;
+
+    // Get the distance between the circle's center and the closest point on the rectangle
+    // Check if this distance is less than the circle's radius
+    differenceVec = closest - circle_center;
+    return glm::length(differenceVec) < one.Radius;
+    }
+
+
+    Direction VectorDirection(glm::vec2 target)
+    {
+        glm::vec2 compass[] =
+        {
+            glm::vec2(0.0f, 1.0f), // UP
+            glm::vec2(0.0f, -1.0f), // DOWN
+            glm::vec2(-1.0f, 0.0f), // LEFT
+            glm::vec2(1.0f, 0.0f) // RIGHT
+        };
+
+        float max = 0.0f;
+        unsigned int best_match = -1;
+        for(unsigned int i = 0; i < 4; i++)
+        {
+            float dot_product = glm::dot(glm::normalize(target), compass[i]);
+            if (dot_product > max)
+            {
+                max = dot_product;
+                best_match = i;
+            }
+        }
+        return (Direction)best_match;
     }
