@@ -279,13 +279,14 @@ Direction VectorDirection(glm::vec2 target)
 
 void Game::ResetLevel()
 {
-    for (GameObject& Box : this->Levels[this->Level].Bricks)
-    {
-        if (Box.IsDestroyed)
-        {
-            Box.IsDestroyed = false;
-        }
-    }
+    if (this->Level == 0)
+        this->Levels[0].Load("Resources/Levels/level1.lvl", this->Width, this->Height / 2);
+    else if (this->Level == 1)
+        this->Levels[1].Load("Resources/Levels/level2.lvl", this->Width, this->Height / 2);
+    else if (this->Level == 2)
+        this->Levels[2].Load("Resources/Levels/level3.lvl", this->Width, this->Height / 2);
+    else if (this->Level == 3)
+        this->Levels[3].Load("Resources/Levels/level4.lvl", this->Width, this->Height / 2);
 }
 
 void Game::ResetPlayer()
