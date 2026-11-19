@@ -4,7 +4,6 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <vector>
-#include <tuple>
 #include "SpriteRenderer.h"
 #include "GameObject.h"
 #include "GameLevel.h"
@@ -38,8 +37,7 @@ class Game
 {
     public:
 
-        typedef std::tuple<bool, Direction, glm::vec2> Collision;
-        
+
         // Game State∂
         GameState               State;
         bool                    Keys[1024];
