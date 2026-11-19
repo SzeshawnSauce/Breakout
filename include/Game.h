@@ -60,6 +60,10 @@ class Game
         void Update(float dt);
         void Render();
 
+        // Resets level and player
+        void ResetLevel();
+        void ResetPlayer();
+
         
         
      

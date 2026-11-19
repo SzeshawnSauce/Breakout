@@ -30,7 +30,6 @@ BallObject*             Ball;
 Collision   CheckCollision(BallObject& one, GameObject& two);
 Direction   VectorDirection(glm::vec2 target);
 
-
 Game::Game(unsigned int width, unsigned int height)
     : State(GAME_ACTIVE), Keys(), Width(width), Height(height)
 {
@@ -127,11 +126,6 @@ void Game::ProcessInput(float dt)
         {
             Ball->Stuck = false;
         }
-        if (this->Keys[GLFW_KEY_R]) // Resets paddle and ball to starting positions
-        {
-            Ball->Reset((Player->Position + glm::vec2(PLAYER_SIZE.x / 2.0f - BALL_RADIUS, -BALL_RADIUS * 2.0f)), INITIAL_BALL_VELOCITY);
-            Player->Position = glm::vec2( (this->Width / 2.0f) - (PLAYER_SIZE.x / 2.0f) , (this->Height - PLAYER_SIZE.y) );
-        }
     }
 }
 
@@ -140,6 +134,11 @@ void Game::Update(float dt)
     // Update ball object
     Ball->Move(dt, this->Width);
     this->DoCollisions();
+    if (Ball->Position.y >= this->Height)
+    {
+        this->ResetLevel();
+        this->ResetPlayer();
+    }
 }
 
 
@@ -277,3 +276,22 @@ Direction VectorDirection(glm::vec2 target)
     }
     return (Direction)best_match;
 }
+
+void Game::ResetLevel()
+{
+    for (GameObject& Box : this->Levels[this->Level].Bricks)
+    {
+        if (Box.IsDestroyed)
+        {
+            Box.IsDestroyed = false;
+        }
+    }
+}
+
+void Game::ResetPlayer()
+{
+    Player->Position = glm::vec2( (this->Width / 2.0f) - (PLAYER_SIZE.x / 2.0f) , (this->Height - PLAYER_SIZE.y) );
+    Ball->Reset((Player->Position + glm::vec2(PLAYER_SIZE.x / 2.0f - BALL_RADIUS, -BALL_RADIUS * 2.0f)), INITIAL_BALL_VELOCITY);
+}
+
+ 
