@@ -1,3 +1,6 @@
 My implementation of the classic 2D game "Breakout"
 
-Moving forward to a practical application of the techniques I learned from LearnOpenGL.com
+I've learned what I've really wanted to get out of this project. I will come back to it and add cool features.
+However I am moving forward and will be tackling more physics based projects.
+
+
